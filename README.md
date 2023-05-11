@@ -2,7 +2,7 @@
 darudcha Platform repository
 1.Разберитесь почему все pod в namespace kube-system восстановились после удаления.
 а) kubelet запущен как сервис systemd среди прочих.
-_____________________________________________
+
 docker@minikube:~$ systemctl kubelet status
 Unknown operation kubelet.
 docker@minikube:~$ systemctl status kubelet
@@ -19,6 +19,7 @@ docker@minikube:~$ systemctl status kubelet
              └─1452 /var/lib/minikube/binaries/v1.26.3/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf 
 --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/cri-dockerd.sock --hostname-override=min
 ikube --kubeconfig=/etc/kubernetes/kubelet.conf --node-ip=192.168.49.2
+
 docker@minikube:~$ systemctl --type=service --state=active
   UNIT                               LOAD   ACTIVE SUB     DESCRIPTION        
                                       
@@ -99,7 +100,7 @@ spec:
    initContainers:
    - name: index-html
      image: busybox:1.31.0
-#     command: ['sh', '-c', 'wget -O- https://tinyurl.com/otus-k8s-intro | sh']
+/#     command: ['sh', '-c', 'wget -O- https://tinyurl.com/otus-k8s-intro | sh']
      command: ['sh', '-c', 'wget -O- https://raw.githubusercontent.com/express42/otus-platform-snippets/master/Module-02/Introduction-to-Kubernetes/wget.sh | sh']
      volumeMounts:
      - name: app
