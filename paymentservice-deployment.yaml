@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: paymentservice
+ labels:
+   app: paymentservice
+spec:
+ replicas: 3
+ selector:
+    matchLabels:
+      app: paymentservice
+ template:
+   metadata:
+     labels:
+       app: paymentservice
+   spec:
+     containers:
+     - name: server
+       image: darudcha/paymentservice:v0.0.2
+       ports:
+         - containerPort: 50051
+#       readinessProbe:
+#            initialDelaySeconds: 10
+#            httpGet:
+#              path: "/_health"
+#              port: 8080
+#              httpHeaders:
+#              - name: "Cookie"
+#                value: "shop_session-id=x-readiness-probe"
+       env:
+         - name: PORT
+           value: "50051"
