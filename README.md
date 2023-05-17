@@ -49,13 +49,13 @@ darudcha Platform repository
 kube-proxy - управляется и создается Daemonset.
 
 * Dockerfile
-
+```
 cat Dockerfile 
 FROM nginx:alpine
 RUN  mkdir /app && touch /app/work.html && chown -R 1001:1001 /app \
      && echo '<html>\n\t<body>\n\t\t<h1>Hello World NGINX!</h1>\n\t</body>\n</html>' > /app/work.html \
      && cp /app/work.html /usr/share/nginx/html
-#COPY /app/work.html /usr/share/nginx/html
+COPY /app/work.html /usr/share/nginx/html
 EXPOSE 80/tcp
 WORKDIR /usr/share/nginx/html
 VOLUME /app
@@ -67,9 +67,10 @@ RUN chown -R 1001:1001 /run/nginx.pid
 RUN chown -R 1001:1001 /var/cache/nginx
 RUN chown -R 1001:1001 /etc/nginx
 USER 1001
+```
 
 * Собрал образ, запусил, проверил и запушил - 
-
+```
 docker push darudcha/nginx:latest
 The push refers to repository [docker.io/darudcha/nginx]
 257b596f12fc: Pushed 
@@ -88,9 +89,10 @@ c1cd5c8c68ef: Pushed
 1003ff723696: Pushed 
 f1417ff83b31: Pushed 
 latest: digest: sha256:cee4ccc8db381c45a9386b6b10e1e6dac52192ed10c79a744f4f847a59a44c0a size: 3437
+```
 
 * Манифест
-
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -121,11 +123,13 @@ kubectl port-forward --address 0.0.0.0 pod/web 8000:80
 Тест - 
 curl http://0.0.0.0:8000/work.html
 <html>\n\t<body>\n\t\t<h1>Hello World NGINX!</h1>\n\t</body>\n</html>
+```
 
 Init отработал - 
-
+```
 2023-05-10T11:49:32.486220135Z Connecting to raw.githubusercontent.com (185.199.111.133:443)                            │
 │ 2023-05-10T11:49:32.529996773Z wget: note: TLS certificate validation not implemented                                   │
 │ 2023-05-10T11:49:32.697254206Z writing to stdout                                                                        │
 │ 2023-05-10T11:49:32.744308199Z -                    100% |********************************| 79785  0:00:00 ETA          │
 │ 2023-05-10T11:49:32.744333698Z written to stdout  
+```
