@@ -117,10 +117,12 @@ spec:
    volumes:
      - name: app
        emptyDir: {}
+```
 
-Проброс портов -
+* Проброс портов и тест
+```
 kubectl port-forward --address 0.0.0.0 pod/web 8000:80
-Тест - 
+
 curl http://0.0.0.0:8000/work.html
 <html>\n\t<body>\n\t\t<h1>Hello World NGINX!</h1>\n\t</body>\n</html>
 ```
