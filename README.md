@@ -1,6 +1,10 @@
 # darudcha_platform
 darudcha Platform repository
-1.Разберитесь почему все pod в namespace kube-system восстановились после удаления.
+
+## Домашние задания 1
+
+* Разберитесь почему все pod в namespace kube-system восстановились после удаления.
+
 а) kubelet запущен как сервис systemd среди прочих.
 
 docker@minikube:~$ systemctl kubelet status
@@ -39,10 +43,12 @@ docker@minikube:~$ systemctl --type=service --state=active
   systemd-tmpfiles-setup-dev.service loaded active exited  Create Static Device Nodes in /dev                       
   systemd-update-utmp.service        loaded active exited  Update UTMP about System Boot/Shutdown                   
 
+
 б) core-dns - в Deployment с параметром replicas. ReplicaSet восстанавливает его работу
 kube-proxy - управляется и создается Daemonset.
 
-2. Dockerfile
+* Dockerfile
+
 cat Dockerfile 
 FROM nginx:alpine
 RUN  mkdir /app && touch /app/work.html && chown -R 1001:1001 /app \
@@ -61,7 +67,7 @@ RUN chown -R 1001:1001 /var/cache/nginx
 RUN chown -R 1001:1001 /etc/nginx
 USER 1001
 
-3. Собрал образ, запусил, проверил и запушил - 
+* Собрал образ, запусил, проверил и запушил - 
 
 docker push darudcha/nginx:latest
 The push refers to repository [docker.io/darudcha/nginx]
@@ -82,8 +88,8 @@ c1cd5c8c68ef: Pushed
 f1417ff83b31: Pushed 
 latest: digest: sha256:cee4ccc8db381c45a9386b6b10e1e6dac52192ed10c79a744f4f847a59a44c0a size: 3437
 
-4. Манифест
-------
+* Манифест
+
 apiVersion: v1
 kind: Pod
 metadata:
