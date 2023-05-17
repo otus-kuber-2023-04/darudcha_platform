@@ -7,6 +7,7 @@ darudcha Platform repository
 
 а) kubelet запущен как сервис systemd среди прочих.
 
+```
 |docker@minikube:~$ systemctl kubelet status
 |Unknown operation kubelet.
 |docker@minikube:~$ systemctl status kubelet
@@ -42,7 +43,7 @@ darudcha Platform repository
 |  systemd-sysusers.service           loaded active exited  Create System Users                                      
 |  systemd-tmpfiles-setup-dev.service loaded active exited  Create Static Device Nodes in /dev                       
 |  systemd-update-utmp.service        loaded active exited  Update UTMP about System Boot/Shutdown                   
-
+```
 
 б) core-dns - в Deployment с параметром replicas. ReplicaSet восстанавливает его работу
 kube-proxy - управляется и создается Daemonset.
