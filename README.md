@@ -7,41 +7,41 @@ darudcha Platform repository
 
 а) kubelet запущен как сервис systemd среди прочих.
 
-docker@minikube:~$ systemctl kubelet status
-Unknown operation kubelet.
-docker@minikube:~$ systemctl status kubelet
-● kubelet.service - kubelet: The Kubernetes Node Agent
-     Loaded: loaded (/lib/systemd/system/kubelet.service; disabled; vendor preset: enabled)
-    Drop-In: /etc/systemd/system/kubelet.service.d
-             └─10-kubeadm.conf
-     Active: active (running) since Wed 2023-05-10 07:34:33 UTC; 18min ago
-       Docs: http://kubernetes.io/docs/
-   Main PID: 1452 (kubelet)
-      Tasks: 16 (limit: 18803)
-     Memory: 123.7M
-     CGroup: /docker/5ddd29970f5880fc95384249a6d9033e28461e917d11ad0563c6e4ffb2767941/system.slice/kubelet.service
-             └─1452 /var/lib/minikube/binaries/v1.26.3/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf 
---config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/cri-dockerd.sock --hostname-override=min
-ikube --kubeconfig=/etc/kubernetes/kubelet.conf --node-ip=192.168.49.2
-
-docker@minikube:~$ systemctl --type=service --state=active
-  UNIT                               LOAD   ACTIVE SUB     DESCRIPTION        
-                                      
-  containerd.service                 loaded active running containerd container runtime                             
-  cri-docker.service                 loaded active running CRI Interface for Docker Application Container Engine    
-  dbus.service                       loaded active running D-Bus System Message Bus                                 
-  docker.service                     loaded active running Docker Application Container Engine                      
-  kmod-static-nodes.service          loaded active exited  Create list of static device nodes for the current kernel
-  kubelet.service                    loaded active running kubelet: The Kubernetes Node Agent                       
-  minikube-automount.service         loaded active exited  minikube automount                                       
-  ssh.service                        loaded active running OpenBSD Secure Shell server                              
-  systemd-journal-flush.service      loaded active exited  Flush Journal to Persistent Storage                      
-  systemd-journald.service           loaded active running Journal Service                                          
-  systemd-remount-fs.service         loaded active exited  Remount Root and Kernel File Systems                     
-  systemd-sysctl.service             loaded active exited  Apply Kernel Variables                                   
-  systemd-sysusers.service           loaded active exited  Create System Users                                      
-  systemd-tmpfiles-setup-dev.service loaded active exited  Create Static Device Nodes in /dev                       
-  systemd-update-utmp.service        loaded active exited  Update UTMP about System Boot/Shutdown                   
+|docker@minikube:~$ systemctl kubelet status
+|Unknown operation kubelet.
+|docker@minikube:~$ systemctl status kubelet
+|● kubelet.service - kubelet: The Kubernetes Node Agent
+|     Loaded: loaded (/lib/systemd/system/kubelet.service; disabled; vendor preset: enabled)
+|    Drop-In: /etc/systemd/system/kubelet.service.d
+|             └─10-kubeadm.conf
+|     Active: active (running) since Wed 2023-05-10 07:34:33 UTC; 18min ago
+|       Docs: http://kubernetes.io/docs/
+|   Main PID: 1452 (kubelet)
+|      Tasks: 16 (limit: 18803)
+|     Memory: 123.7M
+|     CGroup: /docker/5ddd29970f5880fc95384249a6d9033e28461e917d11ad0563c6e4ffb2767941/system.slice/kubelet.service
+|             └─1452 /var/lib/minikube/binaries/v1.26.3/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf 
+|--config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=unix:///var/run/cri-dockerd.sock --hostname-override=min
+|ikube --kubeconfig=/etc/kubernetes/kubelet.conf --node-ip=192.168.49.2
+|
+|docker@minikube:~$ systemctl --type=service --state=active
+|  UNIT                               LOAD   ACTIVE SUB     DESCRIPTION        
+|                                      
+|  containerd.service                 loaded active running containerd container runtime                             
+|  cri-docker.service                 loaded active running CRI Interface for Docker Application Container Engine    
+|  dbus.service                       loaded active running D-Bus System Message Bus                                 
+|  docker.service                     loaded active running Docker Application Container Engine                      
+|  kmod-static-nodes.service          loaded active exited  Create list of static device nodes for the current kernel
+|  kubelet.service                    loaded active running kubelet: The Kubernetes Node Agent                       
+|  minikube-automount.service         loaded active exited  minikube automount                                       
+|  ssh.service                        loaded active running OpenBSD Secure Shell server                              
+|  systemd-journal-flush.service      loaded active exited  Flush Journal to Persistent Storage                      
+|  systemd-journald.service           loaded active running Journal Service                                          
+|  systemd-remount-fs.service         loaded active exited  Remount Root and Kernel File Systems                     
+|  systemd-sysctl.service             loaded active exited  Apply Kernel Variables                                   
+|  systemd-sysusers.service           loaded active exited  Create System Users                                      
+|  systemd-tmpfiles-setup-dev.service loaded active exited  Create Static Device Nodes in /dev                       
+|  systemd-update-utmp.service        loaded active exited  Update UTMP about System Boot/Shutdown                   
 
 
 б) core-dns - в Deployment с параметром replicas. ReplicaSet восстанавливает его работу
