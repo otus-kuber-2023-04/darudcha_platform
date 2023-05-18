@@ -6,13 +6,9 @@ spec:
    containers:
    - name: nginx-web-pod
      image: darudcha/web-pod:v0.0.3
-     readinessProbe: # Добавим проверку готовности
-       httpGet: # веб-сервера отдавать
-          path: /index.html # контент
-          port: 80
      volumeMounts:
      - name: app
-       mountPath: /usr/share/nginx/html
+       mountPath: /app
      ports:
      - containerPort: 8000
    initContainers:
