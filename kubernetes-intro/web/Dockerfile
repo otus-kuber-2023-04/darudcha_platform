@@ -1,11 +1,9 @@
 FROM nginx:alpine
-RUN  mkdir /app && touch /app/work.html && chown -R 1001:1001 /app \
-     && echo '<html>\n\t<body>\n\t\t<h1>Hello World NGINX!</h1>\n\t</body>\n</html>' > /app/work.html \
-     && cp /app/work.html /usr/share/nginx/html
-#COPY /app/work.html /usr/share/nginx/html
-EXPOSE 80/tcp
-WORKDIR /usr/share/nginx/html
-VOLUME /app
+RUN  mkdir /app && touch /app/index.html && chown -R 1001:1001 /app \
+     && echo 'Hello World NGINX!' > /app/index.html
+COPY ./config/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 8000/tcp
+WORKDIR /app
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 RUN chown -R 1001:1001 /usr/share/nginx
 RUN chown -R 1001:1001 /var/log/nginx
