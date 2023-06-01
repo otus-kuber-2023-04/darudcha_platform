@@ -2,8 +2,7 @@
 darudcha Platform repository
 
 ## Домашние задания 1
-https://github.com/otus-kuber-2023-04/darudcha_platform/tree/main/kubernetes-intro/readme/readme.md 
-https://github.com/otus-kuber-2023-04/darudcha_platform/blob/kubernetes-intro/kubernetes-intro/README/README.md
+(https://github.com/otus-kuber-2023-04/darudcha_platform/blob/kubernetes-intro/kubernetes-intro/README/README.md "Домашние задания 1")
 ## Домашние задания 2
 ## Домашние задания 3
 ## Домашние задания 4
