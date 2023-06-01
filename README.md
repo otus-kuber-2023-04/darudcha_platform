@@ -1,7 +1,7 @@
 # darudcha_platform
 darudcha Platform repository
 
-## Домашние задания 1
+* Домашние задания
 [**kubernetes-intro-README-HW1**](kubernetes-intro/README/README.md)
 ##
 [**kubernetes-controllers-README-HW2**](kubernetes-controllers/README/README.md)
