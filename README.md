@@ -3,12 +3,17 @@ darudcha Platform repository
 
 ## Домашние задания 1
 [**kubernetes-intro-README-HW1**](kubernetes-intro/README/README.md)
-
 ##
-[**kubernetes-controllers-README-HW1**](kubernetes-controllers/README/README.md)
-## Домашние задания 3
-## Домашние задания 4
-## Домашние задания 5
-## Домашние задания 6
+[**kubernetes-controllers-README-HW2**](kubernetes-controllers/README/README.md)
+##
+[**kubernetes-networks-README-HW3**](kubernetes-networks/README/README.md)
+##
+[**kubernetes-volumes-README-HW4**](kubernetes-volumes/README/README.md)
+##
+[**kubernetes-security-README-HW5**](kubernetes-security/README/README.md)
+##
+[**kubernetes-monitoring-README-HW6**](kubernetes-monitiring/README/README.md)
+##
+[**kubernetes--README-HW7**](README/README.md)
 
 
