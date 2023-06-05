@@ -4,6 +4,6 @@ metadata:
   namespace: dev
   name: view
 rules:
-- apiGroups: [""] # "" indicates the core API group
+- apiGroups: ["*"]
   resources: ["*"]
-  verbs: ["*"]
+  verbs: ["get", "watch", "list"]
