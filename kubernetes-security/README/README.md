@@ -78,6 +78,8 @@ kind: Namespace
 metadata:
   name: prometheus
 ```
+
+```
 rudcha@rudcha:~/darudcha_platform/kubernetes-security/task02$ sudo vim 01_namespases.yaml
 rudcha@rudcha:~/darudcha_platform/kubernetes-security/task02$ kubectl apply -f 01_namespases.yaml 
 namespace/prometheus created
