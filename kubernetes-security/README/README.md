@@ -109,6 +109,8 @@ NAME      SECRETS   AGE
 carol     0         18s
 default   0         4m
 ```
+
+```
 rudcha@rudcha:~/darudcha_platform/kubernetes-security/task02$ cat 03_ServiceRoleBinging_carol.yaml 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -123,6 +125,7 @@ rules:
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
 ```
+
 * Роль описали выше теперь задаем доступ:
 
 ```
