@@ -217,6 +217,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+
 ```
 rudcha@rudcha:~/darudcha_platform/kubernetes-security/task03$ kubectl apply -f 05_Service_Account_ken.yaml 
 serviceaccount/ken created
