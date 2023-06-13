@@ -35,4 +35,3 @@ darudcha Platform repository
 ##
 [**PROGECT-README**](README/README.md)
 
-
