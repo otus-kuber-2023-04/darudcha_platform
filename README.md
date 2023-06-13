@@ -34,5 +34,3 @@ darudcha Platform repository
 * PROGECT
 ##
 [**PROGECT-README**](README/README.md)
-
-
