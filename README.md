@@ -15,7 +15,7 @@ darudcha Platform repository
 ##
 [**kubernetes-monitoring-README-HW6**](kubernetes-monitiring/README/README.md)
 ##
-[**kubernetes--README-HW7**](README/README.md)
+[**kubernetes-operators-README-HW7**](kubernetes-operators/README/README.md)
 ##
 [**kubernetes--README-HW8**](README/README.md)
 ##
