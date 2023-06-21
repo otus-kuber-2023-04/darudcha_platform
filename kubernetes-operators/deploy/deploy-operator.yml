@@ -15,7 +15,7 @@ spec:
       serviceAccountName: mysql-operator
       containers:
         - name: operator
-          image: "darudcha/mysql:v0.0.1"
+          image: "darudcha/mysql:v0.0.2"
           imagePullPolicy: "Always"
           resources:
             requests:
