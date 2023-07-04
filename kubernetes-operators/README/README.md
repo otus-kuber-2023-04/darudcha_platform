@@ -1,4 +1,4 @@
-ДЗ№7
+ДЗ №7
 
 * Создадим директорию kubernetes-operators/deploy
 * Cоздадим CustomResource deploy/cr.yml
@@ -61,12 +61,11 @@ mysql.otus.homework/mysql-instance created
 rudcha@rudcha:~/darudcha_platform/kubernetes-operators$ kubectl get mysqls.otus.homework
 NAME             AGE
 mysql-instance   7s
-```
 rudcha@rudcha:~/darudcha_platform/kubernetes-operators$ kubectl delete mysqls.otus.homework mysql-instance
 mysql.otus.homework "mysql-instance" deleted
 ```
 
-* Добавим в спецификацию CRD ( spec ) параметры validation
+* Добавим в спецификацию CRD ( spec ) параметры validation 
 ```
 schema:
         openAPIV3Schema:
@@ -149,4 +148,3 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 |  2 | some data-2 |
 +----+-------------+
 ```
-
